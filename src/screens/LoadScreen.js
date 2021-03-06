@@ -1,8 +1,6 @@
 import React from 'react'
-import { Text, View } from 'react-native'
-
+import { SafeAreaView } from 'react-native'
 export default function LoadScreen() {
-  return <View>
-    <Text>Load</Text>
-  </View>
+  return <SafeAreaView>
+  </SafeAreaView>
 }
