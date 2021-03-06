@@ -6,8 +6,8 @@ import useTheme from '../../../../infrastructure/hooks/useTheme'
 import IcAlert from '../../Icons/IcAlert'
 import Paragraphs from '../../Paragraphs'
 
-export default function SimpleAlert({ type }) {
-  const { Background, Border, Flex } = useTheme()
+export default function SimpleAlert({ type, description, title }) {
+  const { Background, Border, Flex, Padding } = useTheme()
   const getIcon = () => {
     switch (type) {
       case 'alert':
@@ -19,7 +19,7 @@ export default function SimpleAlert({ type }) {
   }
   return (
     <Modals>
-      <View>
+      <View style={[Flex.row]}>
         <View>
           <View
             style={[
@@ -32,9 +32,12 @@ export default function SimpleAlert({ type }) {
             {getIcon()}
           </View>
         </View>
-        <View>
-          <Paragraphs>
-            
+        <View style={[Padding.px10]}>
+          <Paragraphs size={'base'}>
+            {title}
+          </Paragraphs>
+          <Paragraphs size='sm'>
+            {description}
           </Paragraphs>
         </View>
       </View>
@@ -49,6 +52,8 @@ SimpleAlert.propsTypes = {
 
 SimpleAlert.defaultProps = {
   type: 'alert',
+  description: 'description',
+  title: 'title'
 }
 
 const styles = StyleSheet.create({
