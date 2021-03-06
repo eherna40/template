@@ -1,6 +1,8 @@
 import React from 'react'
-import SimpleAlert from '../components/commons/Modals/SimpleAlert'
+import { Text, View } from 'react-native'
 
 export default function LoadScreen() {
-  return <SimpleAlert />
+  return <View>
+    <Text>Load</Text>
+  </View>
 }
